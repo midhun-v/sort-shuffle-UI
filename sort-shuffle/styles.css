@@ -12,16 +12,19 @@ header, footer {
     text-align: center;
     padding: 1%;
 }
+header {
+    background-color: white;
+}
 
 .wrapper {
     max-width: 960px;
     margin: auto;
-    background-color: lightgray;
+    background-color: rgb(231, 231, 231);
 }
 
 main {
     display: flex;
-    border-top: 4px solid gray;
+    border-top: 4px solid rgb(160, 159, 159);
   }
 
 .cards-wrapper {
@@ -38,7 +41,14 @@ main {
 ul li {
     list-style: none;
     min-width: calc(100%/3);
-    min-height: 50px;
+    height: 150px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 5em;
+    
 }
 
 .btn-wrapper {
@@ -64,6 +74,26 @@ button:active {
     box-shadow: none;
 }
 
+[key='1'],[key='8'] {
+   background: #6f98a8;
+}
+
+[key='2'],[key='4'] {
+    background: #2b8ead;
+}
+
+[key='3'],[key='5'],[key='9'] {
+    background: #2f454e;
+}
+
+[key='6'],[key='7'] {
+    background: #bfbfbf;
+}
+
+p {
+    font-style: italic;
+    font-size: 1em;
+}
 
 @media screen and (max-width: 376px) {
 
@@ -89,15 +119,14 @@ button:active {
         flex-wrap: wrap;
     }
     
-    li {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        margin: 0 0px 5px 0px;
-        background-color: lightgray;
+    ul li {
         width: 100%;
-        border-left: 5px solid black;
+        max-width: 100%;
+        margin: 0 0px 5px 0px;
+        background-color: lightgray !important;        
+        max-height: 50px;
+        color: rgb(82, 82, 82);
+        font-size: 1.2em
     }
 
     .btn-wrapper {
@@ -111,4 +140,20 @@ button:active {
         width: 35%;
         margin: 1%;
     }
+
+    [key='1'],[key='8'] {
+        border-left: 8px solid #6f98a8;
+     }
+     
+     [key='2'],[key='4'] {
+        border-left: 8px solid #2b8ead;
+     }
+     
+     [key='3'],[key='5'],[key='9'] {
+        border-left: 8px solid #2f454e;
+     }
+     
+     [key='6'],[key='7'] {
+        border-left: 8px solid #bfbfbf;
+     }
 }
