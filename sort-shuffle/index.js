@@ -8,10 +8,13 @@ window.onload = () => {
 const sort = () => {
     numbers.sort((a,b) => a-b);
     renderMethod(numbers)
-}
+};
 
 const shuffle = () => {
-    numbers.sort(() => 0.5 - Math.random());
+    for (let i = numbers.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [numbers[i], numbers[j]] = [numbers[j], numbers[i]];
+    }
     renderMethod(numbers);
 };
 
@@ -20,4 +23,10 @@ const renderMethod = (numbers) => {
     numbers.forEach((item, index) => {
         squareCards.innerHTML += '<li key=' + item + '>' + item + '</li>'
       })
-}
+};
+
+// const shuffle = () => {
+//     //Randomness are biased to a certain extend
+//     numbers.sort(() => 0.5 - Math.random());
+//     renderMethod(numbers);
+// };
